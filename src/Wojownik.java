@@ -1,3 +1,5 @@
+import java.util.Random;
+
 // Klasa Wojownik dziedzicząca po klasie Postać
 public class Wojownik extends Postac {
 
@@ -9,10 +11,13 @@ public class Wojownik extends Postac {
     // Implementacja metody ciosLekki
     @Override
     public void ciosLekki() {
+        Random rand = new Random();
         if (energia >= 10) {
             System.out.println("Wojownik wykonuje cios lekki!");
             energia -= 10;
             // Tutaj można dodać logikę zadawania obrażeń przeciwnikowi
+            System.out.println("Wojownik zadał: " + rand.nextInt(16));
+            System.out.println("Wojownikowi zostało: " + energia + " energi");
         } else {
             System.out.println("Za mało energii na cios lekki!");
         }
@@ -46,7 +51,7 @@ public class Wojownik extends Postac {
     // Implementacja metody poruszanie
     @Override
     public void poruszanie(int nowaPozycja) {
-        if (nowaPozycja >= 0 && nowaPozycja <= 100) {
+        if (nowaPozycja >= 0 &&  nowaPozycja <= 100) {
             pozycja = nowaPozycja;
             System.out.println("Wojownik porusza się na pozycję " + pozycja);
         } else {
