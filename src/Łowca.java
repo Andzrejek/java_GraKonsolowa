@@ -4,15 +4,14 @@ import java.util.Random;
 
 public class Łowca extends Postac {
 
-
     // Konstruktor klasy Łowca
-    public Łowca(int zdrowie,int energi,int pozycja){
+    public Łowca(int zdrowie, int energi, int pozycja) {
         super(zdrowie, energi, pozycja);
     }
-    
+
     // Implementacja metody ciosLekki
     @Override
-    public void ciosLekki(){
+    public void ciosLekki() {
         Random rand = new Random();
         if (energia >= 10) {
             System.out.println("Łowca wykonuje cios lekki!");
@@ -25,15 +24,17 @@ public class Łowca extends Postac {
         }
 
     }
-    
 
     // Implementacja metody ciosMocny
     @Override
-    public void ciosMocny(){
+    public void ciosMocny() {
+        Random rand = new Random();
         if (energia >= 20) {
             System.out.println("Łowca wykonuje cios mocny!");
             energia -= 20;
             // Tutaj można dodać logikę zadawania większych obrażeń przeciwnikowi
+            System.out.println("Łowca zadał:" + rand.nextInt(40));
+            System.out.println("Łowcy zostałó:" + energia + "energi");
         } else {
             System.out.println("Za mało energii na cios mocny!");
         }
@@ -42,12 +43,13 @@ public class Łowca extends Postac {
 
     // Implementacja metody leczenie
     @Override
-    public void leczenie(){
+    public void leczenie() {
         if (energia >= 15) {
             System.out.println("Łowca leczy się!");
             zdrowie += 20;
             energia -= 15;
-            if (zdrowie > 100) zdrowie = 100; // Zdrowie nie może przekroczyć 100
+            if (zdrowie > 100)
+                zdrowie = 100; // Zdrowie nie może przekroczyć 100
         } else {
             System.out.println("Za mało energii na leczenie!");
         }
@@ -56,15 +58,14 @@ public class Łowca extends Postac {
 
     // Implementacja metody poruszanie
     @Override
-    public void poruszanie(int nowaPozycja){
-         if (nowaPozycja >= 0 && nowaPozycja <= 100) {
+    public void poruszanie(int nowaPozycja) {
+        if (nowaPozycja >= 0 && nowaPozycja <= 100) {
             pozycja = nowaPozycja;
             System.out.println("Łowca porusza się na pozycję " + pozycja);
         } else {
             System.out.println("Nieprawidłowa pozycja!");
         }
-    
 
     }
-    
+
 }
