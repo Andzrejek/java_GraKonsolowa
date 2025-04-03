@@ -13,8 +13,11 @@ public abstract class Postac {
 
     // Abstrakcyjne metody, które muszą być zaimplementowane w klasach pochodnych
     public abstract void ciosLekki();
+
     public abstract void ciosMocny();
+
     public abstract void leczenie();
+
     public abstract void poruszanie(int nowaPozycja);
 
     // Metoda do wyświetlania stanu postaci
