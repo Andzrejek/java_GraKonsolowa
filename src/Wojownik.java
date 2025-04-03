@@ -42,7 +42,8 @@ public class Wojownik extends Postac {
             System.out.println("Wojownik leczy się!");
             zdrowie += 20;
             energia -= 15;
-            if (zdrowie > 100) zdrowie = 100; // Zdrowie nie może przekroczyć 100
+            if (zdrowie > 100)
+                zdrowie = 100; // Zdrowie nie może przekroczyć 100
         } else {
             System.out.println("Za mało energii na leczenie!");
         }
@@ -51,7 +52,7 @@ public class Wojownik extends Postac {
     // Implementacja metody poruszanie
     @Override
     public void poruszanie(int nowaPozycja) {
-        if (nowaPozycja >= 0 &&  nowaPozycja <= 100) {
+        if (nowaPozycja >= 0 && nowaPozycja <= 100) {
             pozycja = nowaPozycja;
             System.out.println("Wojownik porusza się na pozycję " + pozycja);
         } else {
