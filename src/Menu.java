@@ -5,9 +5,10 @@ public class Menu {
 
     public static void showMainMenu() {
         int i = 0;
+        System.out.println("Opcje Menu: ");
         for (String zawartoscOptions : options) {
             i++;
-            System.out.println(zawartoscOptions + " " + i);
+            System.out.println(zawartoscOptions + " " + "[" + i + "]");
         }
         System.out.print("Wybierz opcję: ");
 
@@ -26,16 +27,12 @@ public class Menu {
             switch (opcje) {
                 case 1:
                     // rozpocznij rozgrywke
-                    
-                    System.out.print("\033[H\033[2J"); //czyści terminal 
-                    Scanner sPostac = new Scanner(System.in);
-                    System.out.println("Wybierz swoj nick: ");
-                    String name =  sPostac.nextLine();
-                    System.out.print("Wybierz postać (1 - Łowca;2 - Wojownik): ");
-                    int wyborPostaci = sPostac.nextInt();
-                    Player gracz = new Player(name,wyborPostaci);
-                    System.out.println("Gra rozpoczęta!");
 
+                    System.out.println("");
+                    System.out.println("-------------------------------------------------------");
+                    System.out.println("Witaj w grze!"); // powitanie
+                    Gra gra = new Gra();
+                    gra.inicjalizujGre(2);
 
                     break;
 
