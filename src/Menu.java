@@ -21,8 +21,8 @@ public class Menu {
         int opcje = scanner.nextInt();
         int lOptions = options.length;
         while (opcje != lOptions) {
-            showMainMenu();
-            opcje = scanner.nextInt();
+            
+            
 
             switch (opcje) {
                 case 1:
