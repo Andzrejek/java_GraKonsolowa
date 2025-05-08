@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-
-        Menu.startGame();
+        Gra gra = new Gra();
+        gra.wyswietlPlansze();
+        //Menu.startGame();
 
         // //Stworz obniekty klasy Wojownik i Łowca
         // Wojownik w1 = new Wojownik(100,100,100);
