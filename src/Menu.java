@@ -17,12 +17,12 @@ public class Menu {
     public static void startGame() {
 
         Scanner scanner = new Scanner(System.in);
-        showMainMenu();
-        int opcje = scanner.nextInt();
-        int lOptions = options.length;
-        while (opcje != lOptions) {
-            
-            
+
+        int opcje;
+        int optionsL = options.length;
+        do{
+            showMainMenu();
+            opcje = scanner.nextInt();
 
             switch (opcje) {
                 case 1:
@@ -42,11 +42,17 @@ public class Menu {
                     break;
 
                 default:
-                    System.out.println("Taka opcja nie istnieje.");
+                    System.out.println("Taka opcja nie istnieje."); 
                     break;
             }
 
-        }
+        }while(opcje != optionsL);
+        scanner.close();
+        
+            
+            
 
+           
+    
     }
 }
